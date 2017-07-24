@@ -9,7 +9,7 @@
 
 
 ### 代码导读
-##### utils
+#### utils
 1.kafka-zk-utils
 ```
 使用curator操作kafka在zk上的相关信息
@@ -23,7 +23,7 @@
 通过zk的znode和hdfs:tmp路径下两种方式存储消费的偏移量管理
 ```
 
-##### input
+#### input
 
 1.kafkaInputFormat
 
@@ -58,7 +58,7 @@ if (message.isNull()) {
 }
 ```
 
-#####output
+#### output
 
 1.MultiOutputFormat
 ```
@@ -77,14 +77,14 @@ if (hasTS || key.getTimestamp() != null) {
 }
 ```
 
-##### mapper
+#### mapper
 
 HadoopJobMapper
 ```
 运行这个项目的基本M,简单判断是否使用自定义实现时间戳类否则使用系统时间
 ```
 
-##### start
+#### start
 
 StartJob
 ```
@@ -94,6 +94,7 @@ conf.setClass(CONFIG_TIMESTAMP_EXTRACTOR_CLASS, TimeStampExample.class, Timestam
 
 
 ### TO USE
+
 1.项目路径下 maven package
 2.cd ${pj}/bin/start-load.sh
 ```
