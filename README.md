@@ -2,14 +2,14 @@
 ``komlei``  
 ``QQ:122726894``
 
-### 简介
+## 简介
 1.通过MR的方式并发消费kafka中的数据,按照日期落到HDFS指定目录
 2.生产环境中常遇到根据时间戳去落HDFS的目录,一天一个文件夹,不同日期在不同路径
 3.通过kafka的simple-consumer提高数据发送落盘的准确性
 
 
-### 代码导读
-#### utils
+## 代码导读
+### utils
 1.kafka-zk-utils
 ```
 使用curator操作kafka在zk上的相关信息
@@ -23,7 +23,7 @@
 通过zk的znode和hdfs:tmp路径下两种方式存储消费的偏移量管理
 ```
 
-#### input
+### input
 
 1.kafkaInputFormat
 
@@ -58,7 +58,7 @@ if (message.isNull()) {
 }
 ```
 
-#### output
+### output
 
 1.MultiOutputFormat
 ```
@@ -77,14 +77,14 @@ if (hasTS || key.getTimestamp() != null) {
 }
 ```
 
-#### mapper
+### mapper
 
 HadoopJobMapper
 ```
 运行这个项目的基本M,简单判断是否使用自定义实现时间戳类否则使用系统时间
 ```
 
-#### start
+### start
 
 StartJob
 ```
@@ -93,7 +93,7 @@ conf.setClass(CONFIG_TIMESTAMP_EXTRACTOR_CLASS, TimeStampExample.class, Timestam
 ```
 
 
-### TO USE
+## TO USE
 
 1.项目路径下 maven package
 2.cd ${pj}/bin/start-load.sh
